@@ -52,7 +52,6 @@ jobs:
       - name: 自定义插件
         run: |
            cd package/diy
- 
            tar   xvJf  luci-app-docker.tar.xz
            tar   xvJf  luci-app-koolddns.tar.xz
            tar   xvJf  luci-app-rclone.tar.xz
