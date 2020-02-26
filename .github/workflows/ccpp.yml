@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt18.06-CI-rrall精简自用版
+name: OpenWrt18.06-CI
 on:
    push:
     branches: 
@@ -52,7 +52,7 @@ jobs:
       - name: 自定义插件
         run: |
            cd package/diy
-           
+ 
            tar   xvJf  luci-app-docker.tar.xz
            tar   xvJf  luci-app-koolddns.tar.xz
            tar   xvJf  luci-app-rclone.tar.xz
@@ -64,7 +64,7 @@ jobs:
            git clone  https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
            cd ../..
            rm -rfv   package/lean/autocore
-           
+             
            # ==========以上是示范如何加入tar.xz解包和拉github源码编译==========
       - name: Update feeds
         run: |
@@ -117,10 +117,10 @@ jobs:
             CONFIG_EFI_IMAGES=y
             EOF
           # IPv6支持:
-           cat >> .config <<EOF
-           CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-           CONFIG_PACKAGE_ipv6helper=y
-           EOF
+            cat >> .config <<EOF
+            CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+            CONFIG_PACKAGE_ipv6helper=y
+          # EOF
           # 多文件系统支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -139,37 +139,36 @@ jobs:
            CONFIG_PACKAGE_kmod-usb3=y
           EOF
           # 常用LuCI插件选择:
-# 常用LuCI插件选择:
            cat >> .config <<EOF
             CONFIG_PACKAGE_luci-app-adbyby-plus=y
-           # CONFIG_PACKAGE_luci-app-aria2=y
-           # CONFIG_PACKAGE_luci-app-baidupcs-web=y
-           # CONFIG_PACKAGE_luci-app-docker=y
-           # CONFIG_PACKAGE_luci-lib-docker=y
-           # CONFIG_PACKAGE_luci-app-dockerman=y
+          # CONFIG_PACKAGE_luci-app-aria2=y
+          # CONFIG_PACKAGE_luci-app-baidupcs-web=y
+          # CONFIG_PACKAGE_luci-app-docker=y
+          # CONFIG_PACKAGE_luci-lib-docker=y
+          # CONFIG_PACKAGE_luci-app-dockerman=y
             CONFIG_PACKAGE_luci-app-diskman=y
             CONFIG_PACKAGE_luci-app-aliddns=y
-           # CONFIG_PACKAGE_luci-app-rclone=y
+          # CONFIG_PACKAGE_luci-app-rclone=y
             CONFIG_PACKAGE_luci-app-frpc=y
             CONFIG_PACKAGE_luci-app-koolddns=y
-           # CONFIG_PACKAGE_luci-app-kodexplorer=y
+          # CONFIG_PACKAGE_luci-app-kodexplorer=y
             CONFIG_PACKAGE_luci-app-minidlna=y
             CONFIG_PACKAGE_luci-app-openvpn=y
             CONFIG_PACKAGE_luci-app-openvpn-server=y
-           # CONFIG_PACKAGE_luci-app-qbittorrent=y
+          # CONFIG_PACKAGE_luci-app-qbittorrent=y
             CONFIG_PACKAGE_luci-app-trojan-server=y
             CONFIG_PACKAGE_luci-app-familycloud=y
-           # CONFIG_PACKAGE_luci-app-smartinfo=y
-           # CONFIG_PACKAGE_luci-app-syncthing=y
+          # CONFIG_PACKAGE_luci-app-smartinfo=y
+          # CONFIG_PACKAGE_luci-app-syncthing=y
             CONFIG_PACKAGE_luci-app-syncdial=y
             CONFIG_PACKAGE_luci-app-ttyd=y
             CONFIG_PACKAGE_luci-app-mwan3=y
             CONFIG_PACKAGE_luci-app-mwan3helper=y
-           # CONFIG_PACKAGE_luci-app-openclash=y
+          # CONFIG_PACKAGE_luci-app-openclash=y
             CONFIG_PACKAGE_luci-app-v2ray-server=y
-           # CONFIG_PACKAGE_luci-app-verysync=y
+          # CONFIG_PACKAGE_luci-app-verysync=y
             CONFIG_PACKAGE_luci-app-webadmin=y
-            CONFIG_PACKAGE_luci-app-udpxy=y
+          # CONFIG_PACKAGE_luci-app-udpxy=y
             CONFIG_PACKAGE_luci-app-serverchan=y
             CONFIG_PACKAGE_luci-app-usb-printer=y
             CONFIG_PACKAGE_luci-app-onliner=y
@@ -279,4 +278,5 @@ jobs:
           name: OpenWrt18.06 x86 IPK
           path: ./bin/packages/
           
-    
+     
+
