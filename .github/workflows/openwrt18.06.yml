@@ -186,8 +186,8 @@ jobs:
           # CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
             CONFIG_PACKAGE_luci-app-vssr=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
-            CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
+            CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
+          #  CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
             CONFIG_PACKAGE_luci-app-amule=y
             CONFIG_PACKAGE_luci-app-oaf=y
@@ -204,8 +204,8 @@ jobs:
             CONFIG_PACKAGE_luci-app-control-webrestriction=y
             CONFIG_PACKAGE_luci-app-control-weburl=y
             CONFIG_PACKAGE_luci-app-dnspod=y
-          # CONFIG_PACKAGE_luci-app-filebrowser=y
-          # CONFIG_PACKAGE_luci-app-fileassistant=y
+            CONFIG_PACKAGE_luci-app-filebrowser=y
+            CONFIG_PACKAGE_luci-app-fileassistant=y
             CONFIG_PACKAGE_luci-app-haproxy-tcp=y
           # CONFIG_PACKAGE_luci-app-mentohust=y
             CONFIG_PACKAGE_luci-app-mjpg-streamer=y
