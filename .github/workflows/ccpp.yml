@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt18.06-CI rrall精简自用
+name: OpenWrt18.06-CI
 on:
    push:
     branches: 
@@ -66,6 +66,25 @@ jobs:
            git clone  https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman  
            # ==========ssr-plus-Jo   ssr-plus-lean不要一起编译  +vssr   ==========
            # ==========以上是示范如何加入tar.xz解包和拉github源码编译==========
+      - name: 自定义配置文件1
+        run: |
+           cd package
+           git clone   https://github.com/Lienol/openwrt-package   
+           rm    -rfv  openwrt-package/package/v2ray-plugin
+           rm    -rfv  openwrt-package/package/v2ray
+           rm    -rfv  openwrt-package/package/simple-obfs
+           rm    -rfv  openwrt-package/package/dns2socks
+           rm    -rfv  openwrt-package/package/ipt2socks
+           rm    -rfv  openwrt-package/package/shadowsocksr-libev
+           rm    -rfv  ipt2socks
+           
+      - name: 自定义配置文件2
+        run: |
+           cd package/my
+             rm    -rfv  chinadns-ng
+             rm    -rfv  luci-app-passwall
+             rm    -rfv  tcping    
+             
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -116,11 +135,11 @@ jobs:
             cat >> .config <<EOF
             CONFIG_EFI_IMAGES=y
             EOF
-           IPv6支持:
-            cat >> .config <<EOF
-            CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-            CONFIG_PACKAGE_ipv6helper=y
-            EOF
+          # IPv6支持:
+          # cat >> .config <<EOF
+          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          # CONFIG_PACKAGE_ipv6helper=y
+          # EOF
           # 多文件系统支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -185,9 +204,10 @@ jobs:
             CONFIG_PACKAGE_luci-app-smartdns=y
           # CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
+            CONFIG_PACKAGE_luci-app-passwall=y 
             CONFIG_PACKAGE_luci-app-vssr=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
-            CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
+            CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
           # CONFIG_PACKAGE_luci-app-amule=y
             CONFIG_PACKAGE_luci-app-oaf=y
@@ -219,6 +239,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-ssr-libev-server=y
             CONFIG_PACKAGE_luci-app-ssr-python-pro-server=y
           # CONFIG_PACKAGE_luci-app-transmission=y
+           
             CONFIG_LUCI_LANG_en=y
             CONFIG_LUCI_LANG_zh-tw=y
            EOF
@@ -279,3 +300,5 @@ jobs:
         with:
           name: OpenWrt18.06 x86 IPK
           path: ./bin/packages/
+          
+    
