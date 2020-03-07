@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt18.06-CI
+name: OpenWrt18.06-CI rrall精简自用
 on:
    push:
     branches: 
