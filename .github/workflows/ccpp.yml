@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt18.06-CI
+name: OpenWrt18.06-CI rrall精简自用
 on:
    push:
     branches: 
@@ -136,10 +136,10 @@ jobs:
             CONFIG_EFI_IMAGES=y
             EOF
           # IPv6支持:
-          # cat >> .config <<EOF
-          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          # CONFIG_PACKAGE_ipv6helper=y
-          # EOF
+            cat >> .config <<EOF
+            CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+            CONFIG_PACKAGE_ipv6helper=y
+            EOF
           # 多文件系统支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -170,7 +170,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-rclone=y
             CONFIG_PACKAGE_luci-app-frpc=y
             CONFIG_PACKAGE_luci-app-koolddns=y
-            CONFIG_PACKAGE_luci-app-kodexplorer=y
+          # CONFIG_PACKAGE_luci-app-kodexplorer=y
           # CONFIG_PACKAGE_luci-app-minidlna=y
             CONFIG_PACKAGE_luci-app-openvpn=y
             CONFIG_PACKAGE_luci-app-openvpn-server=y
