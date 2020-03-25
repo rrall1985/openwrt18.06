@@ -76,7 +76,7 @@ jobs:
            rm    -rfv  openwrt-package/package/simple-obfs
            rm    -rfv  openwrt-package/package/dns2socks
            rm    -rfv  openwrt-package/package/ipt2socks
-           rm    -rfv  openwrt-package/package/shadowsocksr-libev
+           rm    -rfv  openwrt-package/package/shadowsocksr-libev        
            rm    -rfv  ipt2socks
            
       - name: 自定义配置文件2
@@ -184,7 +184,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-ttyd=y
             CONFIG_PACKAGE_luci-app-mwan3=y
             CONFIG_PACKAGE_luci-app-mwan3helper=y
-          # CONFIG_PACKAGE_luci-app-openclash=y
+            CONFIG_PACKAGE_luci-app-openclash=y
             CONFIG_PACKAGE_luci-app-v2ray-server=y
           # CONFIG_PACKAGE_luci-app-verysync=y
             CONFIG_PACKAGE_luci-app-webadmin=y
@@ -211,7 +211,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
           # CONFIG_PACKAGE_luci-app-amule=y
-            CONFIG_PACKAGE_luci-app-oaf=y
+            CONFIG_PACKAGE_luci-app-appfilter=y
             CONFIG_PACKAGE_luci-app-adblock=y
           # CONFIG_PACKAGE_luci-app-cd8021x=y
             CONFIG_PACKAGE_luci-app-chinadns=y
