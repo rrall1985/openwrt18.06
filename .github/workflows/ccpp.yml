@@ -60,10 +60,10 @@ jobs:
            tar   xvJf  autocore.tar.xz
            tar   xvJf  luci-app-nps.tar.xz
            tar   xvJf  luci-app-adbyby-plus.tar.xz
+           tar   xvJf  luci-app-vssr.tar.xz
            git clone  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo
            git clone  https://github.com/Sweet-Fairy/openwrt-package
            git clone -b lean  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo package/luci-app-ssr-plus-lean    
-           git clone  https://github.com/Leo-Jo/luci-app-vssr-plus
            git clone  https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
            git clone  https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman  
            # ==========ssr-plus-Jo   ssr-plus-lean不要一起编译  +vssr   ==========
@@ -143,7 +143,7 @@ jobs:
            CONFIG_PACKAGE_kmod-usb3=y
           EOF
           # 常用LuCI插件选择:
-            cat >> .config <<EOF
+           cat >> .config <<EOF
             CONFIG_PACKAGE_luci-app-adbyby-plus=y
           # CONFIG_PACKAGE_luci-app-aria2=y
           # CONFIG_PACKAGE_luci-app-baidupcs-web=y
@@ -168,7 +168,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-ttyd=y
             CONFIG_PACKAGE_luci-app-mwan3=y
             CONFIG_PACKAGE_luci-app-mwan3helper=y
-            CONFIG_PACKAGE_luci-app-openclash=y
+          # CONFIG_PACKAGE_luci-app-openclash=y
             CONFIG_PACKAGE_luci-app-v2ray-server=y
           # CONFIG_PACKAGE_luci-app-verysync=y
             CONFIG_PACKAGE_luci-app-webadmin=y
@@ -190,7 +190,7 @@ jobs:
           # CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
             CONFIG_PACKAGE_luci-app-passwall=y 
-            CONFIG_PACKAGE_luci-app-vssr-plus=y
+            CONFIG_PACKAGE_luci-app-vssr=y
           # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
             CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
           # CONFIG_PACKAGE_luci-app-advanced-reboot=y
