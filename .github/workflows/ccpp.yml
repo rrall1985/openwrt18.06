@@ -168,7 +168,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-ttyd=y
             CONFIG_PACKAGE_luci-app-mwan3=y
             CONFIG_PACKAGE_luci-app-mwan3helper=y
-          # CONFIG_PACKAGE_luci-app-openclash=y
+            CONFIG_PACKAGE_luci-app-openclash=y
             CONFIG_PACKAGE_luci-app-v2ray-server=y
           # CONFIG_PACKAGE_luci-app-verysync=y
             CONFIG_PACKAGE_luci-app-webadmin=y
@@ -178,7 +178,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-onliner=y
             CONFIG_PACKAGE_luci-app-nps=y
           # CONFIG_PACKAGE_luci-app-cpulimit=y
-          # CONFIG_PACKAGE_luci-app-netdata=y
+            CONFIG_PACKAGE_luci-app-netdata=y
             CONFIG_PACKAGE_luci-app-cupsd=y
             CONFIG_PACKAGE_luci-app-unblockmusic=y
           # CONFIG_PACKAGE_luci-app-qos=y
@@ -236,6 +236,7 @@ jobs:
             CONFIG_PACKAGE_luci-theme-opentomcat=y
             CONFIG_PACKAGE_luci-theme-opentomato=y
             CONFIG_PACKAGE_luci-theme-argon-mod=y
+            CONFIG_PACKAGE_luci-theme-tomato=y
          
            EOF
           # 常用软件包:
